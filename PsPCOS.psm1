@@ -15,7 +15,7 @@ function Set-D9Creds
     [Alias('D9')]
     Param
     (
-        # Param1 help description
+        # Username
         [Parameter(Mandatory=$false,
                    ValueFromPipelineByPropertyName=$true,
                    Position=0)]
