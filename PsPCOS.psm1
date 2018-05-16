@@ -38,8 +38,13 @@ function Set-D9Creds
             {
                 $Valid = $PrincipalContext.ValidateCredentials($D9Creds.UserName,$D9Creds.GetNetworkCredential().Password)
 
-                If (!$Valid) {
+                If (!$Valid)
+                {
                     Write-Host "Authetication for $($D9Creds.Username) failed." -ForegroundColor Red
+                }
+                Else
+                {
+                    Write-Host "Credentials for $($D9Creds.UserName) successfully set to `$D9Creds object." -ForegroundColor Green
                 }
             }
 
@@ -48,7 +53,6 @@ function Set-D9Creds
     }
     End
     {
-        Write-Host "Credentials for $($D9Creds.UserName) successfully set to `$D9Creds object." -ForegroundColor Green
     }
 }
 
