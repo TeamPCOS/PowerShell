@@ -25,6 +25,7 @@ function Set-D9Creds
     Begin
     {
         Add-Type -AssemblyName System.DirectoryServices.AccountManagement
+        Add-Type -AssemblyName System.Windows.Forms
 
         $PrincipalContext = New-Object System.DirectoryServices.AccountManagement.PrincipalContext Domain,US
 
@@ -53,6 +54,7 @@ function Set-D9Creds
     }
     End
     {
+        [System.Windows.Forms.Clipboard]::Clear()
     }
 }
 
